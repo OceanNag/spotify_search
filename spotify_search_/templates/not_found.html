@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artist Not Found</title>
+  <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+<body>
+  <div class="panel">
+    <h1>Artist not found</h1>
+    <p>We couldn't find the artist you searched for.</p>
+    {% if suggested_name %}
+      <p class="suggestion">Did you mean <strong>{{ suggested_name }}</strong>?</p>
+    {% endif %}
+    <form action="/artists" method="GET">
+      <input type="text" name="artist" placeholder="Try another artist..." required />
+      <button type="submit">Search Again</button>
+    </form>
+  </div>
+</body>
+</html>
