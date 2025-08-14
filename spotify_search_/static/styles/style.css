@@ -15,7 +15,7 @@ body {
     overflow-y: auto;
   
     /* from second block */
-    background-color: #2b5278; /* very deep blue fallback */
+    background-color: #2b3946; /* very deep blue fallback */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@ body {
   
   /* Title styling and h1 (merged) */
   .title, h1 {
-    color: #00CED1; /* bright cyan */
+    color: #5e89f5; /* bright cyan */
     text-align: center;
   }
   
@@ -186,7 +186,7 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     color: #001122;
-    background-color: #2fd5d8;
+    background-color: #539798;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -194,7 +194,7 @@ body {
   }
   
   button:hover {
-    background-color: #235858;
+    background-color: #57d9f0;
   }
   
   /* Suggestion Message */
