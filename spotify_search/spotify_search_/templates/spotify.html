@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} - Spotify Data</title>
+  <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+<body style="background-image: url('{{ artist_image }}');">
+
+  <div class="main-content">
+    <h1 class="title">{{ title }}</h1>
+
+    <div class="info-row">
+      <div><span class="label">Spotify Popularity:</span> {{ popularity }}</div>
+      <a href="{{ spotify_url }}" class="spotify-link-top" target="_blank" rel="noopener noreferrer">
+        Open on Spotify
+      </a>
+      <div><span class="label">Genres:</span> {{ genre }}</div>
+    </div>
+
+    <div class="content">
+      <div class="dropdown" onclick="toggleAlbumInfo()">
+        <span class="label">View Top Tracks</span>
+      </div>
+
+      <div id="albumInfo" style="display: none;">
+        {% for track in [top_tracks, top_tracks_2, top_tracks_3, top_tracks_4, top_tracks_5] %}
+        <div class="track-entry">
+          <div>
+            <a href="{{ track.url }}" class="track-link" target="_blank">{{ track.title }}</a>
+          </div>
+          <div class="album-info">
+            <div><span class="label">Album:</span> {{ track.album }}</div>
+            <div><span class="label">Spotify Popularity:</span> {{ track.spotify_rating }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAlbumInfo() {
+      const album = document.getElementById('albumInfo');
+      album.style.display = album.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
